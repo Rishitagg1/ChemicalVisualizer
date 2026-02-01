@@ -1,0 +1,15 @@
+# --- Python / Django ---
+__pycache__/
+*.py[cod]
+venv/
+env/
+db.sqlite3
+.DS_Store
+
+# --- React / Web ---
+frontend-web/node_modules/
+frontend-web/build/
+.env
+
+# --- Excel / CSV Data (Optional: Keep if you want to share data) ---
+# backend/users.csv
