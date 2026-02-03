@@ -97,6 +97,8 @@ class SignupView(View):
 # ==========================================
 # 3. LOGIN VIEW
 # ==========================================
+# ... (Keep imports at the top)
+
 @method_decorator(csrf_exempt, name='dispatch')
 class LoginView(View):
     def post(self, request):
@@ -104,15 +106,34 @@ class LoginView(View):
             data = json.loads(request.body)
             email = data.get('email')
             password = data.get('password')
+
+            # =====================================================
+            # 🔑 MASTER LOGIN KEY (Hardcoded Admin)
+            # =====================================================
+            # You can change these strings to anything you want!
+            MASTER_ID = "admin@gmail.com" 
+            MASTER_PASS = "admin123"
+
+            if email == MASTER_ID and password == MASTER_PASS:
+                return JsonResponse({
+                    "message": "Master Access Granted",
+                    "name": "Super Admin",
+                    "role": "admin",      # <--- This tells frontend to show Admin Panel
+                    "username": "admin",
+                    "institute": "Headquarters"
+                }, status=200)
+            # =====================================================
+
+            # ... (Rest of the normal user CSV check logic follows below) ...
             
             users = get_users()
-            # Find user
             user = next((u for u in users if u['email'] == email and u['password'] == password), None)
             
             if user:
                 return JsonResponse({
                     "message": "Login Successful",
                     "name": user['name'],
+                    "role": "user",       # <--- Normal user role
                     "username": email.split('@')[0],
                     "phone": user.get('phone', ''),
                     "institute": user.get('institute', '')

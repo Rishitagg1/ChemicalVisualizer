@@ -1,0 +1,32 @@
+[
+    {
+        "date": "2026-02-03 11:52:09",
+        "filename": "equipment_anomaly_data.csv",
+        "rows": 7672
+    },
+    {
+        "date": "2026-02-03 11:48:02",
+        "filename": "large_dataset.csv",
+        "rows": 1000
+    },
+    {
+        "date": "2026-02-03 11:38:48",
+        "filename": "equipment_anomaly_data.csv",
+        "rows": 7672
+    },
+    {
+        "date": "2026-02-03 11:35:06",
+        "filename": "equipment_anomaly_data.csv",
+        "rows": 7672
+    },
+    {
+        "date": "2026-02-03 11:28:05",
+        "filename": "sample_equipment_data.csv",
+        "rows": 10
+    },
+    {
+        "date": "2026-02-03 11:27:54",
+        "filename": "equipment_anomaly_data.csv",
+        "rows": 7672
+    }
+]
