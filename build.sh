@@ -1,13 +1,10 @@
 #!/usr/bin/env bash
-# exit on error
+# Exit on error
 set -o errexit
 
-# 1. Install libraries from the backend folder
+# Install Python dependencies from the backend folder
 pip install -r backend/requirements.txt
 
-# 2. Go inside the backend folder to run Django commands
-cd backend
-
-# 3. Collect static files and migrate database
-python manage.py collectstatic --no-input
-python manage.py migrate
+# Run Django commands (pointing to the backend folder)
+python backend/manage.py collectstatic --no-input
+python backend/manage.py migrate
